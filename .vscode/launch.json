@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "Kubernetes: Run/Debug",
+            "type": "cloudcode.kubernetes",
+            "request": "launch",
+            "skaffoldConfig": "${workspaceFolder}/skaffold.yaml",
+            "watch": true,
+            "cleanUp": true,
+            "portForward": true,
+            "imageRegistry": "rotten-potatoes",
+            "debug": [
+                {
+                    "image": "rotten-potatoes",
+                    "containerName": "movies",
+                    "sourceFileMap": {
+                        "${workspaceFolder}/src": "/app"
+                    }
+                }
+            ]
+        }
+    ]
+}
